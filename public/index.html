@@ -3,210 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maxwell Morrison | Personal Website</title>
+  <title>Maxwell Morrison | Electrical Engineering & Mathematics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background: linear-gradient(135deg, #f7f7f7, #ececec, #dddddd);
-      color: #1f2937;
-      min-height: 100vh;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1150px;
-      margin: 0 auto;
-    }
-
-    header {
-      padding: 24px 0;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: #111827;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      list-style: none;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #374151;
-      font-weight: 600;
-      transition: 0.2s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: #111827;
-    }
-
-    .hero {
-      min-height: calc(100vh - 140px);
-      display: flex;
-      align-items: center;
-      padding: 40px 0 60px;
-    }
-
-    .hero-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 80px;
-      flex-wrap: wrap;
-    }
-
-    .hero-text {
-      flex: 1 1 520px;
-      max-width: 650px;
-    }
-
-    .hero-text h1 {
-      font-size: 3.4rem;
-      line-height: 1.08;
-      margin-bottom: 18px;
-      color: #111827;
-    }
-
-    .hero-text h1 span {
-      color: #4b5563;
-    }
-
-    .hero-text p {
-      font-size: 1.08rem;
-      line-height: 1.9;
-      color: #374151;
-      margin-bottom: 28px;
-      max-width: 620px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 22px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: 0.2s ease;
-    }
-
-    .btn-primary {
-      background: #111827;
-      color: #f9fafb;
-    }
-
-    .btn-primary:hover {
-      background: #1f2937;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      border: 2px solid #6b7280;
-      color: #111827;
-      background: transparent;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.5);
-      transform: translateY(-2px);
-    }
-
-    .hero-image {
-      flex: 1 1 320px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .image-card {
-      width: 320px;
-      height: 390px;
-      border-radius: 24px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.6);
-      border: 1px solid rgba(17,24,39,0.08);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.10);
-    }
-
-    .image-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    footer {
-      text-align: center;
-      padding: 26px 0 36px;
-      color: #4b5563;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 900px) {
-      .hero-content {
-        gap: 40px;
-      }
-
-      .hero-text h1 {
-        font-size: 2.7rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        min-height: auto;
-        padding: 30px 0 60px;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        justify-content: flex-start;
-      }
-
-      .image-card {
-        width: 280px;
-        height: 340px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <div class="container">
-      <nav>
-        <div class="logo">Maxwell Morrison</div>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="logo" href="index.html">Maxwell Morrison</a>
         <ul class="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="projects.html">Projects</a></li>
@@ -221,31 +28,49 @@
 
   <main>
     <section class="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <h1>Hi, I’m <span>Maxwell Morrison</span></h1>
-          <p>
-            I’m a double major in Electrical Engineering and Mathematics with plans to
-            pursue graduate study in signal processing and machine learning. I’m especially
-            interested in research at the intersection of data, mathematics, and intelligent
-            systems, and in using those tools to solve meaningful real-world problems.
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Electrical Engineering & Mathematics</p>
+          <h1>Building research-driven systems across signals, hardware, and intelligent computing.</h1>
+          <p class="hero-copy">
+            I am Maxwell Morrison, a University of Delaware student pursuing electrical engineering and mathematics.
+            My work centers on signal processing, embedded systems, machine learning, and practical engineering tools
+            that turn complex data into useful decisions.
           </p>
-          
+          <div class="actions">
+            <a class="button primary" href="projects.html">View Projects</a>
+            <a class="button" href="education.html">View Transcript</a>
+            <a class="button" href="contact.html">Contact</a>
           </div>
         </div>
 
-        <div class="hero-image">
-          <div class="image-card">
-            <img src="image.png" alt="Photo of Maxwell Morrison">
-          </div>
+        <div class="portrait">
+          <img src="image.png" alt="Portrait of Maxwell Morrison">
+        </div>
+      </div>
+    </section>
+
+    <section class="highlight-strip" aria-label="Profile highlights">
+      <div class="container highlights">
+        <div class="highlight">
+          <strong>Research</strong>
+          <span>Undergraduate researcher in computational neural information engineering and acoustic sensing.</span>
+        </div>
+        <div class="highlight">
+          <strong>Instruction</strong>
+          <span>Teaching and lab support for digital logic and analog circuits at the University of Delaware.</span>
+        </div>
+        <div class="highlight">
+          <strong>Engineering</strong>
+          <span>Project experience across drone detection, fire modeling, health tools, and custom hardware.</span>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="container">
-      <p>© 2026 Maxwell Morrison. All rights reserved.</p>
+      <p>&copy; 2026 Maxwell Morrison. All rights reserved.</p>
     </div>
   </footer>
 </body>

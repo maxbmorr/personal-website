@@ -7,153 +7,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background: linear-gradient(135deg, #f7f7f7, #ececec, #dddddd);
-      color: #1f2937;
-      min-height: 100vh;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1150px;
-      margin: 0 auto;
-    }
-
-    header { padding: 24px 0; }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: #111827;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      list-style: none;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #374151;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: #111827;
-    }
-
-    .page-section {
-      padding: 50px 0 80px;
-    }
-
-    .page-card {
-      max-width: 950px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.68);
-      border: 1px solid rgba(17,24,39,0.08);
-      border-radius: 24px;
-      padding: 40px;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.08);
-    }
-
-    h1 {
-      font-size: 2.6rem;
-      margin-bottom: 28px;
-      color: #111827;
-    }
-
-    .item {
-      padding: 28px 0;
-      border-top: 1px solid rgba(17,24,39,0.10);
-    }
-
-    .item:first-of-type {
-      border-top: none;
-      padding-top: 0;
-    }
-
-    .item-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 8px;
-    }
-
-    .item-header h2 {
-      font-size: 1.3rem;
-      color: #111827;
-    }
-
-    .date {
-      font-weight: 600;
-      color: #4b5563;
-      white-space: nowrap;
-    }
-
-    .subtitle {
-      color: #374151;
-      margin-bottom: 12px;
-      font-size: 1rem;
-    }
-
-    ul {
-      padding-left: 22px;
-    }
-
-    li {
-      margin-bottom: 10px;
-      line-height: 1.8;
-      color: #374151;
-    }
-
-    footer {
-      text-align: center;
-      padding: 26px 0 36px;
-      color: #4b5563;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .page-card {
-        padding: 28px;
-      }
-
-      h1 {
-        font-size: 2.1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <div class="container">
-      <nav>
-        <div class="logo">Maxwell Morrison</div>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="logo" href="index.html">Maxwell Morrison</a>
         <ul class="nav-links">
-           <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="experience.html" class="active">Experience</a></li>
           <li><a href="education.html">Education</a></li>
@@ -164,83 +26,84 @@
     </div>
   </header>
 
-  <main>
-    <section class="page-section">
-      <div class="container">
-        <div class="page-card">
-          <h1>Experience</h1>
+  <main class="page-section">
+    <div class="container page-shell">
+      <p class="eyebrow">Research, Teaching, and Engineering</p>
+      <h1>Experience</h1>
+      <p class="page-intro">
+        Technical roles in research labs, instruction, embedded systems, and electrical engineering design.
+      </p>
 
-          <div class="item">
-            <div class="item-header">
-              <h2>Undergraduate Researcher</h2>
-              <div class="date">Summer 2026</div>
-            </div>
-            <div class="subtitle">Computational Neural Information Engineering Laboratory (CNIEL) &middot; University of Delaware</div>
-            <ul>
-              <li>Conducting undergraduate research under Dr. Austin Brockmeier in the Computational Neural Information Engineering Laboratory.</li>
-            </ul>
+      <div class="content-list">
+        <article class="item">
+          <div class="item-header">
+            <h2>Undergraduate Researcher</h2>
+            <div class="date">Summer 2026</div>
           </div>
+          <div class="subtitle">Computational Neural Information Engineering Laboratory (CNIEL) &middot; University of Delaware</div>
+          <ul>
+            <li>Conducting undergraduate research under Dr. Austin Brockmeier in the Computational Neural Information Engineering Laboratory.</li>
+          </ul>
+        </article>
 
-          <div class="item">
-            <div class="item-header">
-              <h2>Supplemental Instructor / Teaching Assistant</h2>
-              <div class="date">01/2025 – Present</div>
-            </div>
-            <div class="subtitle">University of Delaware · Newark, DE</div>
-            <ul>
-              <li>Supplemental Instructor for CPEG202 – Introduction to Digital Logic under Dr. Nathan Lazarus and Mr. Thomas Lum.</li>
-              <li>Hold weekly student support hours and assist students with course concepts, lab work, and problem solving.</li>
-              <li>Support instruction through grading quizzes, exams, and course materials while serving as a primary contact for students.</li>
-            </ul>
+        <article class="item">
+          <div class="item-header">
+            <h2>Supplemental Instructor / Teaching Assistant</h2>
+            <div class="date">Jan. 2025 &ndash; Present</div>
           </div>
+          <div class="subtitle">University of Delaware &middot; Newark, DE</div>
+          <ul>
+            <li>Supplemental Instructor for CPEG202, Introduction to Digital Logic, under Dr. Nathan Lazarus and Mr. Thomas Lum.</li>
+            <li>Hold weekly student support hours and assist students with course concepts, lab work, and problem solving.</li>
+            <li>Support instruction through grading quizzes, exams, and course materials while serving as a primary contact for students.</li>
+          </ul>
+        </article>
 
-          <div class="item">
-            <div class="item-header">
-              <h2>Lab Assistant</h2>
-              <div class="date">01/2025 – Present</div>
-            </div>
-            <div class="subtitle">University of Delaware · Newark, DE</div>
-            <ul>
-              <li>Lab Assistant for ELEG205 – Introduction to Analog Circuits under Dr. Fouad Kiamilev.</li>
-              <li>Lead weekly lab sessions and support students in circuit analysis, measurement techniques, and lab procedures.</li>
-              <li>Assist with grading lab coursework and help ensure smooth operation of instructional lab activities.</li>
-            </ul>
+        <article class="item">
+          <div class="item-header">
+            <h2>Lab Assistant</h2>
+            <div class="date">Jan. 2025 &ndash; Present</div>
           </div>
+          <div class="subtitle">University of Delaware &middot; Newark, DE</div>
+          <ul>
+            <li>Lab Assistant for ELEG205, Introduction to Analog Circuits, under Dr. Fouad Kiamilev.</li>
+            <li>Lead weekly lab sessions and support students in circuit analysis, measurement techniques, and lab procedures.</li>
+            <li>Assist with grading lab coursework and help ensure smooth operation of instructional lab activities.</li>
+          </ul>
+        </article>
 
-          <div class="item">
-            <div class="item-header">
-              <h2>Electrical Engineering Intern</h2>
-              <div class="date">05/2025 – 08/2025</div>
-            </div>
-            <div class="subtitle">Henry Adams · Baltimore, MD</div>
-            <ul>
-              <li>Worked in Revit and AutoCAD to develop detailed drawings for contractors.</li>
-              <li>Performed lighting simulations using AGi-32.</li>
-              <li>Contributed to arc flash studies using SKM.</li>
-            </ul>
+        <article class="item">
+          <div class="item-header">
+            <h2>Electrical Engineering Intern</h2>
+            <div class="date">May 2025 &ndash; Aug. 2025</div>
           </div>
+          <div class="subtitle">Henry Adams &middot; Baltimore, MD</div>
+          <ul>
+            <li>Worked in Revit and AutoCAD to develop detailed drawings for contractors.</li>
+            <li>Performed lighting simulations using AGi-32.</li>
+            <li>Contributed to arc flash studies using SKM.</li>
+          </ul>
+        </article>
 
-          <div class="item">
-            <div class="item-header">
-              <h2>Undergraduate Researcher</h2>
-              <div class="date">01/2025 – 08/2025</div>
-            </div>
-            <div class="subtitle">University of Delaware · Newark, DE</div>
-            <ul>
-              <li>Worked with Dr. Mohsen Badiey and a team of undergraduate researchers on an electronic acoustic recorder.</li>
-              <li>Developed a system using the ESP-WROOM-32D with custom hardware and firmware.</li>
-              <li>Contributed to embedded system development in support of underwater acoustics research.</li>
-            </ul>
+        <article class="item">
+          <div class="item-header">
+            <h2>Undergraduate Researcher</h2>
+            <div class="date">Jan. 2025 &ndash; Aug. 2025</div>
           </div>
-
-        </div>
+          <div class="subtitle">University of Delaware &middot; Newark, DE</div>
+          <ul>
+            <li>Worked with Dr. Mohsen Badiey and a team of undergraduate researchers on an electronic acoustic recorder.</li>
+            <li>Developed a system using the ESP-WROOM-32D with custom hardware and firmware.</li>
+            <li>Contributed to embedded system development in support of underwater acoustics research.</li>
+          </ul>
+        </article>
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="container">
-      <p>© 2026 Maxwell Morrison. All rights reserved.</p>
+      <p>&copy; 2026 Maxwell Morrison. All rights reserved.</p>
     </div>
   </footer>
 </body>

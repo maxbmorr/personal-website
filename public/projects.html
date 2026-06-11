@@ -7,221 +7,86 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: "Inter", sans-serif;
-      background: linear-gradient(135deg, #f7f7f7, #ececec, #dddddd);
-      color: #1f2937;
-      min-height: 100vh;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1150px;
-      margin: 0 auto;
-    }
-
-    header { padding: 24px 0; }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .logo {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: #111827;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      list-style: none;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #374151;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: #111827;
-    }
-
-    .page-section {
-      padding: 50px 0 80px;
-    }
-
-    .page-card {
-      max-width: 950px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.68);
-      border: 1px solid rgba(17,24,39,0.08);
-      border-radius: 24px;
-      padding: 40px;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.08);
-    }
-
-    h1 {
-      font-size: 2.6rem;
-      margin-bottom: 28px;
-      color: #111827;
-    }
-
-    .item {
-      padding: 24px 0;
-      border-top: 1px solid rgba(17,24,39,0.10);
-    }
-
-    .item:first-of-type {
-      border-top: none;
-      padding-top: 0;
-    }
-
-    .item h2 {
-      font-size: 1.3rem;
-      margin-bottom: 12px;
-      color: #111827;
-    }
-
-    .item p {
-      font-size: 1.02rem;
-      line-height: 1.8;
-      color: #374151;
-    }
-
-    .item a {
-      color: #111827;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .item a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 26px 0 36px;
-      color: #4b5563;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .page-card {
-        padding: 28px;
-      }
-
-      h1 {
-        font-size: 2.1rem;
-      }
-
-      .item h2 {
-        font-size: 1.15rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <div class="container">
-      <nav>
-        <div class="logo">Maxwell Morrison</div>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="logo" href="index.html">Maxwell Morrison</a>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
           <li><a href="experience.html">Experience</a></li>
           <li><a href="education.html">Education</a></li>
-          <li><a href="affiliations.html" class="active">Affiliations</a></li>
+          <li><a href="affiliations.html">Affiliations</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="page-section">
-      <div class="container">
-        <div class="page-card">
-          <h1>Projects</h1>
+  <main class="page-section">
+    <div class="container page-shell">
+      <p class="eyebrow">Selected Work</p>
+      <h1>Projects</h1>
+      <p class="page-intro">
+        Applied engineering projects spanning embedded systems, machine learning, modeling, and web tools.
+      </p>
 
-          <div class="item">
-            <h2>Drone Eye (Senior Design)</h2>
-            <p>
-              Working with a team of four undergraduate students, I am helping design a
-              computer-vision and machine-learning based drone detection system. The platform
-              uses LiDAR for depth perception and a custom-trained ML model to detect drones
-              and estimate their Cartesian coordinates within the system. The project also
-              includes a user-friendly graphical interface for displaying detections and outputs.
-            </p>
+      <div class="content-list">
+        <article class="item">
+          <h2>Drone Eye (Senior Design)</h2>
+          <p>
+            Designed with a team of four undergraduate students, Drone Eye is a computer-vision and machine-learning
+            drone detection system. The platform uses LiDAR for depth perception and a custom-trained ML model to
+            detect drones and estimate Cartesian coordinates through a graphical interface.
+          </p>
+        </article>
+
+        <article class="item">
+          <h2>Diabeasy (UD Hackathon)</h2>
+          <p>
+            Built an encrypted Tkinter application that helps users track insulin usage and calculate dosage amounts.
+          </p>
+        </article>
+
+        <article class="item">
+          <h2>PitchMAX</h2>
+          <p>
+            Developed a lower-cost pitch calling system inspired by PitchCom. The project uses custom hardware and
+            firmware to communicate called pitches between players.
+          </p>
+        </article>
+
+        <article class="item">
+          <h2>PyroPlan (UD Hackathon)</h2>
+          <p>
+            Created a web platform for modeling fire spread in level 1 materials server-side, making simulation more
+            accessible without requiring local software installation.
+          </p>
+          <div class="project-actions">
+            <a class="text-link" href="https://hackathon2026-cfbef.web.app/" target="_blank" rel="noopener noreferrer">View Project</a>
           </div>
+        </article>
 
-          <div class="item">
-            <h2>Diabeasy (UD Hackathon)</h2>
-            <p>
-              Alongside a team of four undergraduate students, I helped design an encrypted
-              downloadable application built with Tkinter that assists users with tracking
-              insulin usage and calculating insulin dosage amounts.
-            </p>
+        <article class="item">
+          <h2>Mom Blood Sugar Tracker</h2>
+          <p>
+            Developed a web platform that lets multiple caregivers submit orders and coordinate blood sugar and
+            insulin-related care, with an emphasis on dosing, tracking, and communication.
+          </p>
+          <div class="project-actions">
+            <a class="text-link" href="https://mom-blood-sugar-trac.web.app/" target="_blank" rel="noopener noreferrer">View Project</a>
           </div>
-
-          <div class="item">
-            <h2>PitchMAX</h2>
-            <p>
-              Developed with another undergraduate student, PitchMAX is inspired by systems like
-              PitchCom and enables pitchers and catchers to call pitches at a fraction of the cost
-              of existing solutions. The project uses custom hardware and firmware to communicate
-              called pitches between players.
-            </p>
-          </div>
-
-          <div class="item">
-            <h2>PyroPlan (UD Hackathon)</h2>
-            <p>
-              Working with a team of four undergraduate students, I helped create PyroPlan, a
-              web-based platform for modeling fire spread in level 1 materials entirely server-side
-              without requiring any software download. The tool was designed to make fire-spread
-              simulation more accessible through an interactive web interface.
-              <br><br>
-              <a href="https://hackathon2026-cfbef.web.app/" target="_blank" rel="noopener noreferrer">View Project</a>
-            </p>
-          </div>
-
-          <div class="item">
-            <h2>Mom Blood Sugar Tracker</h2>
-            <p>
-              I developed a web-based platform that allows multiple caregivers to submit orders
-              and coordinate blood sugar and insulin-related care in a way similar to MyChart,
-              but focused specifically on insulin dosing, blood sugar tracking, and caregiver
-              communication.
-              <br><br>
-              <a href="https://mom-blood-sugar-trac.web.app/" target="_blank" rel="noopener noreferrer">View Project</a>
-            </p>
-          </div>
-
-        </div>
+        </article>
       </div>
-    </section>
+    </div>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="container">
-      <p>© 2026 Maxwell Morrison. All rights reserved.</p>
+      <p>&copy; 2026 Maxwell Morrison. All rights reserved.</p>
     </div>
   </footer>
 </body>
