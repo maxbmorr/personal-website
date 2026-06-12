@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import argparse
 import html
@@ -18,6 +18,7 @@ PROFILE = {
     "phone": "443-825-5800",
     "linkedin": "linkedin.com/in/maxwellbmorrison",
     "website": "maxwellmorrison.net",
+    "updated": "June 2026",
     "summary": (
         "University of Delaware student pursuing electrical engineering and applied mathematics, "
         "with interests in signal processing, embedded systems, machine learning, computational "
@@ -46,13 +47,19 @@ EDUCATION = [
 ]
 
 
-COURSEWORK = [
-    "ELEG479, Introduction to Biomedical Imaging - A",
-    "ELEG467, Introduction to Computational Methods - A",
-    "MATH426, Computational Mathematics - In Progress",
-    "MATH503, Complex Analysis - In Progress",
-    "MATH508, Advanced Calculus with Nonlinear Dynamics - In Progress",
-]
+COURSEWORK = {
+    "Electrical Engineering": [
+        "ELEG479, Introduction to Biomedical Imaging - A",
+    ],
+    "Computing / Computational Methods": [
+        "ELEG467, Introduction to Computational Methods - A",
+        "MATH426, Computational Mathematics - In Progress",
+    ],
+    "Applied Mathematics": [
+        "MATH503, Complex Analysis - In Progress",
+        "MATH508, Advanced Calculus with Nonlinear Dynamics - In Progress",
+    ],
+}
 
 
 EXPERIENCE = [
@@ -153,6 +160,19 @@ PROJECTS = [
 ]
 
 
+PRESENTATIONS = [
+    {
+        "title": "DroneEye",
+        "event": "University of Delaware Research Day",
+        "date": "2026",
+        "details": [
+            "Presented a drone detection system using computer vision, machine learning, and LiDAR-based depth perception.",
+            "Received the Research Day People's Choice Award for DroneEye.",
+        ],
+    },
+]
+
+
 AWARDS = [
     "2026 Research Day People's Choice Award Winner for DroneEye, Department of Electrical and Computer Engineering, University of Delaware",
     "Institute of Electrical and Electronics Engineers Delaware Bay Section Student Activities Award, Department of Electrical and Computer Engineering, University of Delaware",
@@ -237,10 +257,27 @@ def render_cv() -> str:
         """
         for project in PROJECTS
     )
+    presentations_html = "\n".join(
+        render_item(
+            item["title"],
+            item["event"],
+            item["date"],
+            item["details"],
+        )
+        for item in PRESENTATIONS
+    )
     awards_html = "\n".join(f"<li>{esc(award)}</li>" for award in AWARDS)
     affiliations_html = "\n".join(f"<li>{esc(item)}</li>" for item in AFFILIATIONS)
     skills_html = "\n".join(f"<li>{esc(skill)}</li>" for skill in SKILLS)
-    coursework_html = "\n".join(f"<li>{esc(course)}</li>" for course in COURSEWORK)
+    coursework_html = "\n".join(
+        f"""
+        <div class="course-group">
+          <h3>{esc(category)}</h3>
+          <ul>{"".join(f"<li>{esc(course)}</li>" for course in courses)}</ul>
+        </div>
+        """
+        for category, courses in COURSEWORK.items()
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -378,6 +415,22 @@ def render_cv() -> str:
       columns: 2;
     }}
 
+    .coursework {{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }}
+
+    .course-group ul {{
+      margin-top: 6px;
+    }}
+
+    .updated {{
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 9pt;
+    }}
+
     .compact p {{
       margin: 6px 0 0;
     }}
@@ -415,6 +468,7 @@ def render_cv() -> str:
         <span>{esc(PROFILE["website"])}</span>
       </p>
       <p class="summary">{esc(PROFILE["summary"])}</p>
+      <p class="updated">Last updated {esc(PROFILE["updated"])}</p>
     </header>
 
     <section>
@@ -424,7 +478,7 @@ def render_cv() -> str:
 
     <section>
       <h2>Selected Coursework</h2>
-      <ul>{coursework_html}</ul>
+      <div class="coursework">{coursework_html}</div>
     </section>
 
     <section>
@@ -435,6 +489,11 @@ def render_cv() -> str:
     <section>
       <h2>Projects</h2>
       {projects_html}
+    </section>
+
+    <section>
+      <h2>Presentations</h2>
+      {presentations_html}
     </section>
 
     <section class="grid">
@@ -544,15 +603,17 @@ def main() -> None:
     )
     args = parser.parse_args()
 
+    public_dir = Path(__file__).resolve().parent.parent / "public"
     output = Path(args.output)
     if not output.is_absolute():
-        output = Path(__file__).resolve().parent / output
+        output = public_dir / output
     pdf_output = Path(args.pdf_output)
     if not pdf_output.is_absolute():
-        pdf_output = Path(__file__).resolve().parent / pdf_output
+        pdf_output = public_dir / pdf_output
 
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(render_cv(), encoding="utf-8")
+    cv_html = "\n".join(line.rstrip() for line in render_cv().splitlines()) + "\n"
+    output.write_text(cv_html, encoding="utf-8")
     print(f"Generated {output}")
 
     open_target = output
@@ -567,3 +628,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

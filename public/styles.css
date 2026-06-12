@@ -352,6 +352,19 @@ li + li {
   margin-bottom: 12px;
 }
 
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 34px;
+}
+
 .affiliation-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -451,6 +464,7 @@ li + li {
   .hero-grid,
   .highlights,
   .project-grid,
+  .detail-grid,
   .affiliation-grid,
   .contact-grid {
     grid-template-columns: 1fr;

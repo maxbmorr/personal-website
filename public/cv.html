@@ -134,6 +134,22 @@
       columns: 2;
     }
 
+    .coursework {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .course-group ul {
+      margin-top: 6px;
+    }
+
+    .updated {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 9pt;
+    }
+
     .compact p {
       margin: 6px 0 0;
     }
@@ -171,11 +187,12 @@
         <span>maxwellmorrison.net</span>
       </p>
       <p class="summary">University of Delaware student pursuing electrical engineering and applied mathematics, with interests in signal processing, embedded systems, machine learning, computational neural information engineering, and practical engineering tools.</p>
+      <p class="updated">Last updated June 2026</p>
     </header>
 
     <section>
       <h2>Education</h2>
-      
+
       <article class="entry">
         <div class="entry-head">
           <div>
@@ -188,7 +205,7 @@
 <li>B.S. Applied Mathematics, College of Arts and Sciences</li>
 <li>GPA: 3.6</li></ul>
       </article>
-    
+
 
       <article class="entry">
         <div class="entry-head">
@@ -200,21 +217,34 @@
         </div>
         <ul><li>High School Diploma</li></ul>
       </article>
-    
+
     </section>
 
     <section>
       <h2>Selected Coursework</h2>
-      <ul><li>ELEG479, Introduction to Biomedical Imaging - A</li>
-<li>ELEG467, Introduction to Computational Methods - A</li>
-<li>MATH426, Computational Mathematics - In Progress</li>
-<li>MATH503, Complex Analysis - In Progress</li>
-<li>MATH508, Advanced Calculus with Nonlinear Dynamics - In Progress</li></ul>
+      <div class="coursework">
+        <div class="course-group">
+          <h3>Electrical Engineering</h3>
+          <ul><li>ELEG479, Introduction to Biomedical Imaging - A</li></ul>
+        </div>
+
+
+        <div class="course-group">
+          <h3>Computing / Computational Methods</h3>
+          <ul><li>ELEG467, Introduction to Computational Methods - A</li><li>MATH426, Computational Mathematics - In Progress</li></ul>
+        </div>
+
+
+        <div class="course-group">
+          <h3>Applied Mathematics</h3>
+          <ul><li>MATH503, Complex Analysis - In Progress</li><li>MATH508, Advanced Calculus with Nonlinear Dynamics - In Progress</li></ul>
+        </div>
+        </div>
     </section>
 
     <section>
       <h2>Research, Teaching, and Engineering Experience</h2>
-      
+
       <article class="entry">
         <div class="entry-head">
           <div>
@@ -225,7 +255,7 @@
         </div>
         <ul><li>Conducting undergraduate research under Dr. Austin Brockmeier in the Computational Neural Information Engineering Laboratory.</li></ul>
       </article>
-    
+
 
       <article class="entry">
         <div class="entry-head">
@@ -239,7 +269,7 @@
 <li>Hold weekly student support hours and assist students with course concepts, lab work, and problem solving.</li>
 <li>Support instruction through grading quizzes, exams, and course materials while serving as a primary contact for students.</li></ul>
       </article>
-    
+
 
       <article class="entry">
         <div class="entry-head">
@@ -253,7 +283,7 @@
 <li>Lead weekly lab sessions and support students in circuit analysis, measurement techniques, and lab procedures.</li>
 <li>Assist with grading lab coursework and help ensure smooth operation of instructional lab activities.</li></ul>
       </article>
-    
+
 
       <article class="entry">
         <div class="entry-head">
@@ -267,7 +297,7 @@
 <li>Performed lighting simulations using AGi-32.</li>
 <li>Contributed to arc flash studies using SKM.</li></ul>
       </article>
-    
+
 
       <article class="entry">
         <div class="entry-head">
@@ -281,12 +311,12 @@
 <li>Developed a system using the ESP-WROOM-32D with custom hardware and firmware.</li>
 <li>Contributed to embedded system development in support of underwater acoustics research.</li></ul>
       </article>
-    
+
     </section>
 
     <section>
       <h2>Projects</h2>
-      
+
         <article class="entry compact">
           <div class="entry-head">
             <div>
@@ -296,7 +326,7 @@
           </div>
           <p>Computer-vision and machine-learning drone detection system using LiDAR for depth perception and a custom-trained model to detect drones and estimate Cartesian coordinates through a graphical interface.</p>
         </article>
-        
+
 
         <article class="entry compact">
           <div class="entry-head">
@@ -307,7 +337,7 @@
           </div>
           <p>Encrypted Tkinter application for tracking insulin usage and calculating dosage amounts.</p>
         </article>
-        
+
 
         <article class="entry compact">
           <div class="entry-head">
@@ -318,7 +348,7 @@
           </div>
           <p>Lower-cost pitch calling system inspired by PitchCom, using custom hardware and firmware to communicate called pitches between players.</p>
         </article>
-        
+
 
         <article class="entry compact">
           <div class="entry-head">
@@ -329,7 +359,7 @@
           </div>
           <p>Web platform for modeling fire spread in level 1 materials server-side, making simulation accessible without local software installation.</p>
         </article>
-        
+
 
         <article class="entry compact">
           <div class="entry-head">
@@ -340,7 +370,24 @@
           </div>
           <p>Web platform that lets multiple caregivers submit orders and coordinate blood sugar and insulin-related care.</p>
         </article>
-        
+
+    </section>
+
+    <section>
+      <h2>Presentations</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>DroneEye</h3>
+            <p class="subtitle">University of Delaware Research Day</p>
+          </div>
+          <p class="date">2026</p>
+        </div>
+        <ul><li>Presented a drone detection system using computer vision, machine learning, and LiDAR-based depth perception.</li>
+<li>Received the Research Day People&#x27;s Choice Award for DroneEye.</li></ul>
+      </article>
+
     </section>
 
     <section class="grid">
