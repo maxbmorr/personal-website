@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maxwell Morrison | CV</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #526070;
+      --line: #d8dee8;
+      --accent: #1f6f78;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f6f8;
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10.8pt;
+      line-height: 1.45;
+    }
+
+    .page {
+      width: min(8.5in, calc(100% - 32px));
+      margin: 24px auto;
+      background: #fff;
+      padding: 0.58in;
+      box-shadow: 0 16px 42px rgba(23, 32, 51, 0.12);
+    }
+
+    header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0 0 5px;
+      font-size: 27pt;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .headline {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 9.6pt;
+    }
+
+    .summary {
+      margin: 14px 0 0;
+      max-width: 7.1in;
+    }
+
+    section {
+      margin-top: 22px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 5px;
+      color: var(--accent);
+      font-size: 12.8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 11.5pt;
+    }
+
+    .entry {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      margin-top: 13px;
+    }
+
+    .entry:first-child {
+      margin-top: 0;
+    }
+
+    .entry-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .subtitle,
+    .date {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 9.7pt;
+    }
+
+    .date {
+      flex: 0 0 auto;
+      text-align: right;
+      font-weight: 700;
+    }
+
+    ul {
+      margin: 6px 0 0 18px;
+      padding: 0;
+    }
+
+    li {
+      margin-top: 3px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .skills {
+      columns: 2;
+    }
+
+    .compact p {
+      margin: 6px 0 0;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      @page {
+        size: letter;
+        margin: 0.55in;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Maxwell Morrison</h1>
+      <p class="headline">Electrical Engineering and Applied Mathematics Student</p>
+      <p class="contact">
+        <span>Newark, DE</span>
+        <span>maxbmorr@udel.edu</span>
+        <span>maxbenmorr@gmail.com</span>
+        <span>443-825-5800</span>
+        <span>linkedin.com/in/maxwellbmorrison</span>
+        <span>maxwellmorrison.net</span>
+      </p>
+      <p class="summary">University of Delaware student pursuing electrical engineering and applied mathematics, with interests in signal processing, embedded systems, machine learning, computational neural information engineering, and practical engineering tools.</p>
+    </header>
+
+    <section>
+      <h2>Education</h2>
+      
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>University of Delaware</h3>
+            <p class="subtitle">Newark, DE</p>
+          </div>
+          <p class="date">Expected May 2027</p>
+        </div>
+        <ul><li>B.S. Electrical Engineering, College of Engineering</li>
+<li>B.S. Applied Mathematics, College of Arts and Sciences</li>
+<li>GPA: 3.6</li></ul>
+      </article>
+    
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Dulaney High School</h3>
+            <p class="subtitle">Timonium, MD</p>
+          </div>
+          <p class="date">May 2023</p>
+        </div>
+        <ul><li>High School Diploma</li></ul>
+      </article>
+    
+    </section>
+
+    <section>
+      <h2>Research, Teaching, and Engineering Experience</h2>
+      
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Undergraduate Researcher</h3>
+            <p class="subtitle">Computational Neural Information Engineering Laboratory (CNIEL), University of Delaware | Newark, DE</p>
+          </div>
+          <p class="date">Summer 2026</p>
+        </div>
+        <ul><li>Conducting undergraduate research under Dr. Austin Brockmeier in the Computational Neural Information Engineering Laboratory.</li></ul>
+      </article>
+    
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Supplemental Instructor / Teaching Assistant</h3>
+            <p class="subtitle">University of Delaware | Newark, DE</p>
+          </div>
+          <p class="date">Jan. 2025 - Present</p>
+        </div>
+        <ul><li>Supplemental Instructor for CPEG202, Introduction to Digital Logic, under Dr. Nathan Lazarus and Mr. Thomas Lum.</li>
+<li>Hold weekly student support hours and assist students with course concepts, lab work, and problem solving.</li>
+<li>Support instruction through grading quizzes, exams, and course materials while serving as a primary contact for students.</li></ul>
+      </article>
+    
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Lab Assistant</h3>
+            <p class="subtitle">University of Delaware | Newark, DE</p>
+          </div>
+          <p class="date">Jan. 2025 - Present</p>
+        </div>
+        <ul><li>Lab Assistant for ELEG205, Introduction to Analog Circuits, under Dr. Fouad Kiamilev.</li>
+<li>Lead weekly lab sessions and support students in circuit analysis, measurement techniques, and lab procedures.</li>
+<li>Assist with grading lab coursework and help ensure smooth operation of instructional lab activities.</li></ul>
+      </article>
+    
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Electrical Engineering Intern</h3>
+            <p class="subtitle">Henry Adams | Baltimore, MD</p>
+          </div>
+          <p class="date">May 2025 - Aug. 2025</p>
+        </div>
+        <ul><li>Worked in Revit and AutoCAD to develop detailed drawings for contractors.</li>
+<li>Performed lighting simulations using AGi-32.</li>
+<li>Contributed to arc flash studies using SKM.</li></ul>
+      </article>
+    
+
+      <article class="entry">
+        <div class="entry-head">
+          <div>
+            <h3>Undergraduate Researcher</h3>
+            <p class="subtitle">University of Delaware | Newark, DE</p>
+          </div>
+          <p class="date">Jan. 2025 - Aug. 2025</p>
+        </div>
+        <ul><li>Worked with Dr. Mohsen Badiey and a team of undergraduate researchers on an electronic acoustic recorder.</li>
+<li>Developed a system using the ESP-WROOM-32D with custom hardware and firmware.</li>
+<li>Contributed to embedded system development in support of underwater acoustics research.</li></ul>
+      </article>
+    
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      
+        <article class="entry compact">
+          <div class="entry-head">
+            <div>
+              <h3>Drone Eye</h3>
+              <p class="subtitle">Senior Design, Computer Vision, LiDAR</p>
+            </div>
+          </div>
+          <p>Computer-vision and machine-learning drone detection system using LiDAR for depth perception and a custom-trained model to detect drones and estimate Cartesian coordinates through a graphical interface.</p>
+        </article>
+        
+
+        <article class="entry compact">
+          <div class="entry-head">
+            <div>
+              <h3>Diabeasy</h3>
+              <p class="subtitle">UD Hackathon, Python</p>
+            </div>
+          </div>
+          <p>Encrypted Tkinter application for tracking insulin usage and calculating dosage amounts.</p>
+        </article>
+        
+
+        <article class="entry compact">
+          <div class="entry-head">
+            <div>
+              <h3>PitchMAX</h3>
+              <p class="subtitle">Hardware, Firmware</p>
+            </div>
+          </div>
+          <p>Lower-cost pitch calling system inspired by PitchCom, using custom hardware and firmware to communicate called pitches between players.</p>
+        </article>
+        
+
+        <article class="entry compact">
+          <div class="entry-head">
+            <div>
+              <h3>PyroPlan</h3>
+              <p class="subtitle">UD Hackathon, Web App, Simulation</p>
+            </div>
+          </div>
+          <p>Web platform for modeling fire spread in level 1 materials server-side, making simulation accessible without local software installation.</p>
+        </article>
+        
+
+        <article class="entry compact">
+          <div class="entry-head">
+            <div>
+              <h3>Mom Blood Sugar Tracker</h3>
+              <p class="subtitle">Healthcare, Web App</p>
+            </div>
+          </div>
+          <p>Web platform that lets multiple caregivers submit orders and coordinate blood sugar and insulin-related care.</p>
+        </article>
+        
+    </section>
+
+    <section class="grid">
+      <div>
+        <h2>Awards</h2>
+        <ul><li>2026 Research Day People&#x27;s Choice Award Winner for DroneEye, Department of Electrical and Computer Engineering, University of Delaware</li>
+<li>Institute of Electrical and Electronics Engineers Delaware Bay Section Student Activities Award, Department of Electrical and Computer Engineering, University of Delaware</li>
+<li>Eagle Scout, 2021</li>
+<li>Dean&#x27;s List</li></ul>
+      </div>
+      <div>
+        <h2>Affiliations</h2>
+        <ul><li>IEEE Student Chapter</li>
+<li>IEEE Eta Kappa Nu</li>
+<li>Troop 97 (Scouts BSA)</li></ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <ul class="skills"><li>Signal processing</li>
+<li>Machine learning</li>
+<li>Embedded systems</li>
+<li>Digital logic</li>
+<li>Analog circuits</li>
+<li>Python</li>
+<li>Tkinter</li>
+<li>Revit</li>
+<li>AutoCAD</li>
+<li>AGi-32</li>
+<li>SKM</li>
+<li>ESP-WROOM-32D</li></ul>
+    </section>
+  </main>
+</body>
+</html>
