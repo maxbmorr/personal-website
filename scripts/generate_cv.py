@@ -17,6 +17,7 @@ PROFILE = {
     "personal_email": "maxbenmorr@gmail.com",
     "phone": "443-825-5800",
     "linkedin": "linkedin.com/in/maxwellbmorrison",
+    "github": "github.com/maxbmorr",
     "website": "maxwellmorrison.net",
     "updated": "June 2026",
     "summary": (
@@ -70,6 +71,7 @@ EXPERIENCE = [
         "date": "Summer 2026",
         "bullets": [
             "Conducting undergraduate research under Dr. Austin Brockmeier in the Computational Neural Information Engineering Laboratory.",
+            "Research code repository: github.com/maxbmorr/CNiEL",
         ],
     },
     {
@@ -146,7 +148,7 @@ PROJECTS = [
         "tags": "UD Hackathon, Web App, Simulation",
         "description": (
             "Web platform for modeling fire spread in level 1 materials server-side, making simulation "
-            "accessible without local software installation."
+            "accessible without local software installation. Repository: github.com/maxbmorr/2026-Hackathon."
         ),
     },
     {
@@ -465,6 +467,7 @@ def render_cv() -> str:
         <span>{esc(PROFILE["personal_email"])}</span>
         <span>{esc(PROFILE["phone"])}</span>
         <span>{esc(PROFILE["linkedin"])}</span>
+        <span>{esc(PROFILE["github"])}</span>
         <span>{esc(PROFILE["website"])}</span>
       </p>
       <p class="summary">{esc(PROFILE["summary"])}</p>
