@@ -305,10 +305,10 @@ def render_cv() -> str:
   <title>{esc(PROFILE["name"])} | CV</title>
   <style>
     :root {{
-      --ink: #172033;
-      --muted: #526070;
-      --line: #d8dee8;
-      --accent: #1f6f78;
+      --ink: #000;
+      --muted: #333;
+      --line: #000;
+      --accent: #000;
     }}
 
     * {{
@@ -317,7 +317,7 @@ def render_cv() -> str:
 
     body {{
       margin: 0;
-      background: #f4f6f8;
+      background: #f5f5f5;
       color: var(--ink);
       font-family: Arial, Helvetica, sans-serif;
       font-size: 10.8pt;
@@ -329,7 +329,7 @@ def render_cv() -> str:
       margin: 24px auto;
       background: #fff;
       padding: 0.58in;
-      box-shadow: 0 16px 42px rgba(23, 32, 51, 0.12);
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.12);
     }}
 
     header {{
@@ -348,7 +348,7 @@ def render_cv() -> str:
     .headline {{
       margin: 0 0 10px;
       color: var(--accent);
-      font-weight: 700;
+      font-weight: 600;
     }}
 
     .contact {{
@@ -376,7 +376,7 @@ def render_cv() -> str:
       color: var(--accent);
       font-size: 12.8pt;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
     }}
 
     h3 {{
