@@ -11,7 +11,7 @@ import webbrowser
 
 PROFILE = {
     "name": "Maxwell Morrison",
-    "title": "Electrical Engineering and Applied Mathematics Student",
+    "title": "B.S. Candidate in Electrical Engineering and Applied Mathematics",
     "location": "Newark, DE",
     "email": "maxbmorr@udel.edu",
     "personal_email": "maxbenmorr@gmail.com",
@@ -21,9 +21,10 @@ PROFILE = {
     "website": "maxwellmorrison.net",
     "updated": "June 2026",
     "summary": (
-        "University of Delaware student pursuing electrical engineering and applied mathematics, "
-        "with interests in signal processing, embedded systems, machine learning, computational "
-        "neural information engineering, and practical engineering tools."
+        "Undergraduate researcher at the University of Delaware with a background in electrical "
+        "engineering and applied mathematics. Research interests include signal processing, "
+        "computational imaging, machine learning for sensing systems, embedded systems, and "
+        "computational neural information engineering."
     ),
 }
 
@@ -38,12 +39,6 @@ EDUCATION = [
             "B.S. Applied Mathematics, College of Arts and Sciences",
             "GPA: 3.6",
         ],
-    },
-    {
-        "institution": "Dulaney High School",
-        "location": "Timonium, MD",
-        "date": "May 2023",
-        "details": ["High School Diploma"],
     },
 ]
 
@@ -63,7 +58,7 @@ COURSEWORK = {
 }
 
 
-EXPERIENCE = [
+RESEARCH_EXPERIENCE = [
     {
         "role": "Undergraduate Researcher",
         "organization": "Computational Neural Information Engineering Laboratory (CNIEL), University of Delaware",
@@ -71,9 +66,25 @@ EXPERIENCE = [
         "date": "Summer 2026",
         "bullets": [
             "Conducting undergraduate research under Dr. Austin Brockmeier in the Computational Neural Information Engineering Laboratory.",
-            "Research code repository: github.com/maxbmorr/CNiEL",
+            "Working on computational methods for neural information engineering, with emphasis on data-driven analysis and reproducible research code.",
+            "Maintaining research code repository: github.com/maxbmorr/CNiEL",
         ],
     },
+    {
+        "role": "Undergraduate Researcher",
+        "organization": "Underwater Acoustics Research, University of Delaware",
+        "location": "Newark, DE",
+        "date": "Jan. 2025 - Aug. 2025",
+        "bullets": [
+            "Worked with Dr. Mohsen Badiey and a team of undergraduate researchers on an electronic acoustic recorder.",
+            "Developed an embedded sensing system using the ESP-WROOM-32D with custom hardware and firmware.",
+            "Contributed to embedded system development in support of underwater acoustics research.",
+        ],
+    },
+]
+
+
+TEACHING_AND_ENGINEERING_EXPERIENCE = [
     {
         "role": "Supplemental Instructor / Teaching Assistant",
         "organization": "University of Delaware",
@@ -102,20 +113,9 @@ EXPERIENCE = [
         "location": "Baltimore, MD",
         "date": "May 2025 - Aug. 2025",
         "bullets": [
-            "Worked in Revit and AutoCAD to develop detailed drawings for contractors.",
+            "Worked in Revit and AutoCAD to develop detailed electrical drawings for contractors.",
             "Performed lighting simulations using AGi-32.",
             "Contributed to arc flash studies using SKM.",
-        ],
-    },
-    {
-        "role": "Undergraduate Researcher",
-        "organization": "University of Delaware",
-        "location": "Newark, DE",
-        "date": "Jan. 2025 - Aug. 2025",
-        "bullets": [
-            "Worked with Dr. Mohsen Badiey and a team of undergraduate researchers on an electronic acoustic recorder.",
-            "Developed a system using the ESP-WROOM-32D with custom hardware and firmware.",
-            "Contributed to embedded system development in support of underwater acoustics research.",
         ],
     },
 ]
@@ -123,11 +123,12 @@ EXPERIENCE = [
 
 PROJECTS = [
     {
-        "name": "Drone Eye",
+        "name": "DroneEye",
         "tags": "Senior Design, Computer Vision, LiDAR",
         "description": (
             "Computer-vision and machine-learning drone detection system using LiDAR for depth perception "
-            "and a custom-trained model to detect drones and estimate Cartesian coordinates through a graphical interface."
+            "and a custom-trained model to detect drones and estimate Cartesian coordinates through a graphical interface. "
+            "Presented at University of Delaware Research Day."
         ),
     },
     {
@@ -164,11 +165,11 @@ PROJECTS = [
 
 PRESENTATIONS = [
     {
-        "title": "DroneEye",
+        "title": "DroneEye: LiDAR- and Machine-Learning-Based Drone Detection System",
         "event": "University of Delaware Research Day",
         "date": "2026",
         "details": [
-            "Presented a drone detection system using computer vision, machine learning, and LiDAR-based depth perception.",
+            "Presented poster and technical presentation on a drone detection system using computer vision, machine learning, and LiDAR-based depth perception.",
             "Received the Research Day People's Choice Award for DroneEye.",
         ],
     },
@@ -191,13 +192,14 @@ AFFILIATIONS = [
 
 
 SKILLS = [
-    "Signal processing",
-    "Machine learning",
-    "Embedded systems",
-    "Digital logic",
-    "Analog circuits",
+    "Signal processing and computational methods",
+    "Machine learning and computer vision",
+    "Embedded systems and firmware",
+    "Digital logic and analog circuits",
     "Python",
     "Tkinter",
+    "MATLAB",
+    "Git / GitHub",
     "Revit",
     "AutoCAD",
     "AGi-32",
@@ -236,14 +238,23 @@ def render_cv() -> str:
         )
         for item in EDUCATION
     )
-    experience_html = "\n".join(
+    research_experience_html = "\n".join(
         render_item(
             item["role"],
             f"{item['organization']} | {item['location']}",
             item["date"],
             item["bullets"],
         )
-        for item in EXPERIENCE
+        for item in RESEARCH_EXPERIENCE
+    )
+    teaching_engineering_html = "\n".join(
+        render_item(
+            item["role"],
+            f"{item['organization']} | {item['location']}",
+            item["date"],
+            item["bullets"],
+        )
+        for item in TEACHING_AND_ENGINEERING_EXPERIENCE
     )
     projects_html = "\n".join(
         f"""
@@ -279,6 +290,11 @@ def render_cv() -> str:
         </div>
         """
         for category, courses in COURSEWORK.items()
+    )
+
+    research_interests_html = (
+        "Signal processing; computational imaging; machine learning for sensing systems; "
+        "embedded perception; computational neural information engineering; applied and computational mathematics."
     )
 
     return f"""<!DOCTYPE html>
@@ -437,6 +453,10 @@ def render_cv() -> str:
       margin: 6px 0 0;
     }}
 
+    .compact-line {{
+      margin: 0;
+    }}
+
     @media print {{
       body {{
         background: #fff;
@@ -480,18 +500,13 @@ def render_cv() -> str:
     </section>
 
     <section>
-      <h2>Selected Coursework</h2>
-      <div class="coursework">{coursework_html}</div>
+      <h2>Research Interests</h2>
+      <p class="compact-line">{esc(research_interests_html)}</p>
     </section>
 
     <section>
-      <h2>Research, Teaching, and Engineering Experience</h2>
-      {experience_html}
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-      {projects_html}
+      <h2>Research Experience</h2>
+      {research_experience_html}
     </section>
 
     <section>
@@ -499,20 +514,34 @@ def render_cv() -> str:
       {presentations_html}
     </section>
 
-    <section class="grid">
-      <div>
-        <h2>Awards</h2>
-        <ul>{awards_html}</ul>
-      </div>
-      <div>
-        <h2>Affiliations</h2>
-        <ul>{affiliations_html}</ul>
-      </div>
+    <section>
+      <h2>Awards</h2>
+      <ul>{awards_html}</ul>
+    </section>
+
+    <section>
+      <h2>Teaching and Engineering Experience</h2>
+      {teaching_engineering_html}
+    </section>
+
+    <section>
+      <h2>Selected Projects</h2>
+      {projects_html}
+    </section>
+
+    <section>
+      <h2>Selected Coursework</h2>
+      <div class="coursework">{coursework_html}</div>
     </section>
 
     <section>
       <h2>Technical Skills</h2>
       <ul class="skills">{skills_html}</ul>
+    </section>
+
+    <section>
+      <h2>Affiliations</h2>
+      <ul>{affiliations_html}</ul>
     </section>
   </main>
 </body>
