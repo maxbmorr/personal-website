@@ -19,7 +19,7 @@ PROFILE = {
     "linkedin": "linkedin.com/in/maxwellbmorrison",
     "github": "github.com/maxbmorr",
     "website": "maxwellmorrison.net",
-    "updated": "June 2026",
+    "updated": "July 2026",
     "summary": (
         "Undergraduate researcher at the University of Delaware with a background in electrical "
         "engineering and applied mathematics. Research interests include signal processing, "
@@ -66,8 +66,8 @@ RESEARCH_EXPERIENCE = [
         "date": "Summer 2026",
         "bullets": [
             "Conducting undergraduate research under Dr. Austin Brockmeier in the Computational Neural Information Engineering Laboratory.",
-            "Working on computational methods for neural information engineering, with emphasis on data-driven analysis and reproducible research code.",
-            "Maintaining research code repository: github.com/maxbmorr/CNiEL",
+            "Summer project: DINO-Kernel-Herding, combining machine-learning feature representations with kernel herding methods for representative data selection.",
+            "Maintaining research code repository: github.com/maxbmorr/DINO-Kernel-Herding",
         ],
     },
     {
@@ -293,7 +293,7 @@ def render_cv() -> str:
     )
 
     research_interests_html = (
-        "Signal processing; computational imaging; machine learning for sensing systems; "
+        "Signal processing; computational imaging; kernel methods; machine learning for sensing systems; "
         "embedded perception; computational neural information engineering; applied and computational mathematics."
     )
 
