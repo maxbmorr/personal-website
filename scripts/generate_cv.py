@@ -66,7 +66,8 @@ RESEARCH_EXPERIENCE = [
         "date": "Summer 2026",
         "bullets": [
             "Conducting undergraduate research under Dr. Austin Brockmeier in the Computational Neural Information Engineering Laboratory.",
-            "Summer project: DINO-Kernel-Herding, combining machine-learning feature representations with kernel herding methods for representative data selection.",
+            "Summer project: DINO-Kernel-Herding, encoding images as DINO feature representations and selecting unlabeled samples with a kernel-herding objective.",
+            "Developing an objective that maximizes the von Neumann entropy of the labeled set unioned with a selectable unlabeled subset, with a scaled log-probability soft penalty.",
             "Maintaining research code repository: github.com/maxbmorr/DINO-Kernel-Herding",
         ],
     },
@@ -294,7 +295,8 @@ def render_cv() -> str:
 
     research_interests_html = (
         "Signal processing; computational imaging; kernel methods; machine learning for sensing systems; "
-        "embedded perception; computational neural information engineering; applied and computational mathematics."
+        "information-theoretic objectives; embedded perception; computational neural information engineering; "
+        "applied and computational mathematics."
     )
 
     return f"""<!DOCTYPE html>
