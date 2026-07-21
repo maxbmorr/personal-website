@@ -378,8 +378,6 @@ def render_cv() -> str:
 
     section {{
       margin-top: 22px;
-      break-inside: avoid;
-      page-break-inside: avoid;
     }}
 
     h2 {{
@@ -452,6 +450,9 @@ def render_cv() -> str:
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
+    }}
+
+    .coursework-section {{
       break-inside: avoid;
       page-break-inside: avoid;
     }}
@@ -546,7 +547,7 @@ def render_cv() -> str:
       {projects_html}
     </section>
 
-    <section>
+    <section class="coursework-section">
       <h2>Selected Coursework</h2>
       <div class="coursework">{coursework_html}</div>
     </section>
