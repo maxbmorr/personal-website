@@ -378,6 +378,8 @@ def render_cv() -> str:
 
     section {{
       margin-top: 22px;
+      break-inside: avoid;
+      page-break-inside: avoid;
     }}
 
     h2 {{
@@ -388,6 +390,8 @@ def render_cv() -> str:
       font-size: 12.8pt;
       text-transform: uppercase;
       letter-spacing: 0.03em;
+      break-after: avoid;
+      page-break-after: avoid;
     }}
 
     h3 {{
@@ -448,6 +452,8 @@ def render_cv() -> str:
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
+      break-inside: avoid;
+      page-break-inside: avoid;
     }}
 
     .course-group ul {{
