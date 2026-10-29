@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#081018">
+  <meta name="description" content="Contact Maxwell Morrison, electrical engineering and applied mathematics student at the University of Delaware.">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Maxwell Morrison | Digital Business Card</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      color-scheme: dark;
+      --ink: #f3f8fb;
+      --muted: #9eabb9;
+      --line: rgba(132, 217, 220, 0.2);
+      --accent: #82d9dc;
+      --accent-strong: #47b5bc;
+      --surface: #081018;
+      --panel: rgba(17, 29, 41, 0.88);
+    }
+
+    body {
+      min-height: 100svh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 12% 5%, rgba(71, 181, 188, 0.22), transparent 32rem),
+        radial-gradient(circle at 92% 92%, rgba(50, 87, 130, 0.2), transparent 30rem),
+        var(--surface);
+      color: var(--ink);
+      font-family: "Inter", Arial, sans-serif;
+    }
+
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 42px 42px;
+      content: "";
+      mask-image: linear-gradient(to bottom, black, transparent 75%);
+    }
+
+    main {
+      display: grid;
+      min-height: 100svh;
+      place-items: center;
+      padding: max(24px, env(safe-area-inset-top)) 18px max(24px, env(safe-area-inset-bottom));
+    }
+
+    .card {
+      width: min(100%, 430px);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--panel);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.46);
+      backdrop-filter: blur(18px);
+    }
+
+    .visual {
+      position: relative;
+      height: 238px;
+      overflow: hidden;
+    }
+
+    .visual::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 35%, rgba(17, 29, 41, 0.15) 62%, #111d29 100%);
+      content: "";
+    }
+
+    .portrait {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 72% 32%;
+      filter: saturate(0.88) contrast(1.04);
+    }
+
+    .monogram {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 1;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      margin-top: -18px;
+      padding: 0 24px 24px;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(130, 217, 220, 0.25);
+      border-radius: 999px;
+      padding: 7px 11px;
+      background: rgba(8, 16, 24, 0.78);
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .availability::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-strong);
+      box-shadow: 0 0 0 4px rgba(71, 181, 188, 0.13);
+      content: "";
+    }
+
+    h1 {
+      font-size: clamp(2rem, 9vw, 2.65rem);
+      font-weight: 800;
+      letter-spacing: -0.045em;
+      line-height: 1;
+    }
+
+    .title {
+      margin-top: 10px;
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .intro {
+      margin-top: 17px;
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.65;
+    }
+
+    .primary-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid #35505c;
+      border-radius: 12px;
+      padding: 0 15px;
+      background: #142431;
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .button.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #071315;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .links {
+      display: grid;
+      margin-top: 18px;
+      border-top: 1px solid rgba(158, 171, 185, 0.16);
+    }
+
+    .link {
+      display: flex;
+      min-height: 53px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(158, 171, 185, 0.16);
+      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 160ms ease, padding 160ms ease;
+    }
+
+    .link span:first-child {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .link small {
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 500;
+    }
+
+    .link:hover,
+    .link:focus-visible {
+      padding-left: 4px;
+      color: var(--accent);
+    }
+
+    .arrow {
+      color: var(--accent);
+      font-size: 1.15rem;
+    }
+
+    .footer {
+      margin-top: 18px;
+      color: #718090;
+      font-size: 0.72rem;
+      text-align: center;
+    }
+
+    @media (max-width: 360px) {
+      .primary-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .visual {
+        height: 210px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="card" aria-labelledby="card-name">
+      <div class="visual">
+        <img class="portrait" src="IMG_5776.jpg" alt="Maxwell Morrison presenting his research poster">
+        <img class="monogram" src="logo.svg" alt="MM monogram">
+      </div>
+
+      <div class="content">
+        <p class="availability">Open to connections</p>
+        <h1 id="card-name">Maxwell Morrison</h1>
+        <p class="title">Electrical Engineering &amp; Applied Mathematics<br>University of Delaware</p>
+        <p class="intro">Researcher and engineer working across signal processing, embedded systems, machine learning, and intelligent computing.</p>
+
+        <div class="primary-actions">
+          <a class="button primary" href="maxwell-morrison.vcf" download>＋ Save Contact</a>
+          <a class="button" href="mailto:maxbmorr@udel.edu">✉ Email Me</a>
+        </div>
+
+        <div class="links" aria-label="Contact links">
+          <a class="link" href="tel:+14438255800">
+            <span>Phone <small>443-825-5800</small></span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="link" href="https://www.linkedin.com/in/maxwellbmorrison" target="_blank" rel="noopener noreferrer">
+            <span>LinkedIn <small>/in/maxwellbmorrison</small></span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="link" href="https://github.com/maxbmorr" target="_blank" rel="noopener noreferrer">
+            <span>GitHub <small>@maxbmorr</small></span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="link" href="https://personal-website-93e85.web.app" target="_blank" rel="noopener noreferrer">
+            <span>Portfolio <small>Selected work &amp; research</small></span><span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <p class="footer">Digital business card · Maxwell Morrison</p>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
