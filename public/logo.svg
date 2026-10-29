@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">MM logo</title>
+  <desc id="desc">Maxwell Morrison monogram</desc>
+  <rect width="64" height="64" rx="14" fill="#172033"/>
+  <path d="M10 44V20h7l7 11 7-11h7v24h-7V31l-7 10-7-10v13z" fill="#fff"/>
+  <path d="M35 44V20h7l6 10 6-10h6v24h-7V31l-5 9-6-9v13z" fill="#74c7cc"/>
+</svg>
